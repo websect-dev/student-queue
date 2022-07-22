@@ -1,6 +1,6 @@
 import { AppProps } from 'next/app';
 import Head from 'next/head';
-import './styles.css';
+import '../styles/globals.scss';
 import { FC } from 'react';
 
 const CustomApp: FC<AppProps> = ({ Component, pageProps }): JSX.Element => {
@@ -8,6 +8,7 @@ const CustomApp: FC<AppProps> = ({ Component, pageProps }): JSX.Element => {
     <>
       <Head>
         <title>Welcome to frontend!</title>
+        <link rel="icon" type={'image'} href="/favicon.ico" />
       </Head>
       <main className="app">
         <Component {...pageProps} />
