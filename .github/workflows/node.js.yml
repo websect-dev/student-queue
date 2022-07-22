@@ -25,8 +25,10 @@ jobs:
       - name: Clean install
         run: npm ci
       - name: Lint all projects
-        run: npm run lint:all
-      - name: Run tests for backend
+        run: npm run cs:all
+      - name: Lint styles
+        run: npm run stylelint:lint
+      - name: Test backend
         run: npm run test
       - name: Build frontend
         run: npm run build:frontend

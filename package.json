@@ -1,8 +1,9 @@
 {
   "name": "student-queue",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "author": "websect",
   "repository": "https://github.com/websect-dev/student-queue",
+  "readme": "https://github.com/websect-dev/student-queue#readme",
   "license": "MIT",
   "scripts": {
     "start:all": "nx run-many --parallel --target=serve --projects=frontend,backend",
@@ -11,11 +12,13 @@
     "build:all": "nx run-many --parallel --target=build --projects=frontend,backend",
     "build:frontend": "nx build frontend",
     "build:backend": "nx build backend",
-    "lint:all": "nx affected:lint",
-    "lint:frontend": "nx lint frontend",
-    "lint:backend": "nx lint backend",
-    "lint:fix": "nx affected:lint --fix",
-    "test": "nx test backend"
+    "cs:all": "nx affected:lint",
+    "cs:frontend": "nx lint frontend",
+    "cs:backend": "nx lint backend",
+    "cs:fix": "nx affected:lint --fix",
+    "test": "nx test backend",
+    "stylelint:lint": "stylelint './**/*.scss' -q --config ./apps/frontend/stylelint.config.js",
+    "stylelint:fix": "stylelint --fix './**/*.scss' -q --config ./apps/frontend/stylelint.config.js"
   },
   "private": true,
   "devDependencies": {
@@ -55,6 +58,9 @@
     "prettier": "^2.6.2",
     "react-test-renderer": "18.2.0",
     "sass": "1.52.3",
+    "stylelint": "^14.9.1",
+    "stylelint-config-standard-scss": "^5.0.0",
+    "stylelint-order": "^5.0.0",
     "ts-jest": "27.1.4",
     "ts-node": "~10.8.0",
     "typescript": "~4.7.2"
