@@ -1,15 +1,26 @@
 {
+  "env": {
+    "jest": true,
+    "browser": true,
+    "es2021": true
+  },
   "extends": [
     "plugin:@nrwl/nx/react-typescript",
-    "next",
-    "next/core-web-vitals",
     "../../.eslintrc.json"
   ],
-  "ignorePatterns": ["!**/*"],
-  "rules": {
-    "@next/next/no-html-link-for-pages": "off"
+  "settings": {
+    "react": {
+      "version": "detect"
+    }
   },
-  "env": {
-    "jest": true
+  "plugins": [
+    "react",
+    "@typescript-eslint"
+  ],
+  "parser": "@typescript-eslint/parser",
+  "rules": {
+    "@next/next/no-html-link-for-pages": "off",
+    "react/react-in-jsx-scope": "off",
+    "react/prop-types": "off"
   }
 }
